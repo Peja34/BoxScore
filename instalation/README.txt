@@ -1,0 +1,24 @@
+BoxScore 0.1 - Beta verze programu
+
+install - pøekopíruje soubory do složky C:\Program Files\BoxScore a vytvoøí ikonu na pracovní ploše
+uninstall - vymaže všechny soubory z C:\Program Files\BoxScore vèetnì ikony
+unistall_all - funkce jako uninstall + vymaže i datové složky (C:\boxscoreData)
+-soubory spuštìt jako admin
+
+-datová složka (C:\boxscoreData) se vytvoøí pøi prvním spuštìní programu
+-datová složka obsahuje dvì podsložky
+	-rosters - obsahuje uložené soupisky
+	-boxscores - obsahuje uložené technické zápisy
+
+-soupiska se musí nejdøíve v programu ruènì vytvoøit a uložit, pak mùže být znovu naèítána
+-soupisky se implicitnì ukládají do složky C:\boxscoreData\rosters
+-pøi zapisování statistik se musí nejdøíve kliknout na èíslo hráèe na høišti a pak na statistiku nebo na hráèe na lavièce pro støídání
+-základní pìtka je nastavena automaticky - pìt hráèù s nejnižšími èísly, pøed zaèátkem utkání je nutno prostøídat
+-tlaèítko generate table (pracovní název, bude vhodnì zmìnìno) generuje technický zápis, implicitnì ukládá do složky C:\boxscoreData\boxscores
+-TO = time-out (není potøeba zvolení hráèe pøed kliknutím)
+
+-nepodporuje chybová hlášení - v pøípadì chyby program pouze zamrzne (napøíklad vytvoøení týmu s ménì jak 6 hráèi)
+-nepodporuje zápis pro dva týmy zaráz
+-nepodporuje nastavení barev pøi vytváøení týmu (aktuálnì natvrdo nastavená èerno-modrá)
+-nepodporuje tlaèítko Back
+-tvorba výsledného technického zápisu stále probíhá (tabulka jako taková už je hotová, ale stále obsahje pár chyb)
