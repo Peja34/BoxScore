@@ -167,11 +167,41 @@ public class outputManager {
                 if (this.g.game.refs[2] != null) {
                     p.add(", " + this.g.game.refs[2]);
                 }
-                if (this.g.game.refs[3] != null) {
-                    p.add(", " + this.g.game.refs[3]);
-                }
                 document.add(p);
             }
+            
+            
+            if (this.g.game.refs[3] != null) {
+                p = new Paragraph("Commisioner: " + this.g.game.refs[3]);
+                p.setAlignment(Element.ALIGN_CENTER);
+                document.add(p);
+            }
+            document.add(Chunk.SPACETABBING);
+            
+            PdfPTable qTable = new PdfPTable(6);
+            qTable.setWidthPercentage(35);
+            PdfPCell qCell = new PdfPCell();
+            qCell.setColspan(1);
+            qTable = addSpecCell(qTable, qCell, "Qtr");
+            for (int i = 1; i < 5; i++) {
+                qTable = addSpecCell(qTable, qCell, String.valueOf(i));
+            }
+            qTable = addSpecCell(qTable, qCell, "OT");
+            document.add(qTable);
+            qTable = new PdfPTable(6);
+            qTable.setWidthPercentage(35);
+            qTable = addSpecCell(qTable, qCell, this.g.game.teamA.shortcut);
+            for (int i = 1; i < 6; i++) {
+                qTable = addSpecCell(qTable, qCell, this.g.game.getQPoints(true, i));
+            }
+            document.add(qTable);
+            qTable = new PdfPTable(6);
+            qTable.setWidthPercentage(35);
+            qTable = addSpecCell(qTable, qCell, this.g.game.teamB.shortcut);
+            for (int i = 1; i < 6; i++) {
+                qTable = addSpecCell(qTable, qCell, this.g.game.getQPoints(false, i));
+            }
+            document.add(qTable);
             
             p = new Paragraph(this.g.game.teamA.name);
             document.add(p);

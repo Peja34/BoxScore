@@ -202,6 +202,15 @@ public class Game {
         }
     }
     
+    public String getQPoints(boolean isA, int quarter) {
+        if (isA) {
+            return this.teamA.getQScore(quarter);
+        }
+        else {
+            return this.teamB.getQScore(quarter);
+        }
+    }
+    
     /**
      * Gets an offensive rebound
      * 

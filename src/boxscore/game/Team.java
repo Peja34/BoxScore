@@ -153,6 +153,16 @@ public class Team {
     }
     
     /**
+     * Returns points scored in a specific quarter
+     * 
+     * @param quarter number of asked quarter
+     * @return String of points scored in a quarter
+     */
+    public String getQScore(int quarter) {
+        return String.valueOf(this.points[quarter]);
+    }
+    
+    /**
      * commits a foul
      * 
      * @param quarter quarter in which foul has been commited
